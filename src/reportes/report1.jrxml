@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="468891f1-cb41-43fe-aa39-8bc63c7fe725">
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     hojas.`codigoHoja` AS hojas_codigoHoja,
+     hojas.`descripcion` AS hojas_descripcion,
+     hojas.`unidad` AS hojas_unidad,
+     insumos.`descripcion` AS insumos_descripcion,
+     insumos.`tipo` AS insumos_tipo,
+     insumos.`unidad` AS insumos_unidad,
+     insumos.`precioUnitario` AS insumos_precioUnitario,
+     insumosporhoja.`codigo` AS insumosporhoja_codigo,
+     insumosporhoja.`cantidad` AS insumosporhoja_cantidad
+FROM
+     `insumos` insumos INNER JOIN `insumosporhoja` insumosporhoja ON insumos.`codigo` = insumosporhoja.`codigo`
+     INNER JOIN `hojas` hojas ON insumosporhoja.`codigoHoja` = hojas.`codigoHoja`]]>
+	</queryString>
+	<field name="hojas_codigoHoja" class="java.lang.Integer"/>
+	<field name="hojas_descripcion" class="java.lang.String"/>
+	<field name="hojas_unidad" class="java.lang.String"/>
+	<field name="insumos_descripcion" class="java.lang.String"/>
+	<field name="insumos_tipo" class="java.lang.Integer"/>
+	<field name="insumos_unidad" class="java.lang.String"/>
+	<field name="insumos_precioUnitario" class="java.math.BigDecimal"/>
+	<field name="insumosporhoja_codigo" class="java.lang.Integer"/>
+	<field name="insumosporhoja_cantidad" class="java.math.BigDecimal"/>
+	<group name="hojas_codigoHoja">
+		<groupExpression><![CDATA[$F{hojas_codigoHoja}]]></groupExpression>
+		<groupHeader>
+			<band height="33">
+				<staticText>
+					<reportElement uuid="bf8fc470-a65c-4190-a281-96b1acf387a0" mode="Opaque" x="0" y="0" width="100" height="32" forecolor="#666666" backcolor="#E6E6E6"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[hojas_codigoHoja]]></text>
+				</staticText>
+				<textField>
+					<reportElement uuid="f28ce732-260a-42a4-b606-b656b334e2ff" mode="Opaque" x="100" y="0" width="455" height="32" forecolor="#006699" backcolor="#E6E6E6"/>
+					<textElement>
+						<font size="24" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{hojas_codigoHoja}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement uuid="3aff293d-84ad-4154-b793-2e97ff77ed65" x="-20" y="32" width="595" height="1" forecolor="#666666"/>
+				</line>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement uuid="bf15ad91-5954-4b82-9d4c-1622ac43a4d2" mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699"/>
+				<staticText>
+					<reportElement uuid="f6263e1b-408a-410c-a0ce-c76ce4777437" x="20" y="20" width="234" height="43" forecolor="#FFFFFF"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[TITLE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="3ec67930-df23-4291-b274-7a720933bb8f" x="395" y="43" width="180" height="20" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Add a description here]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement uuid="356292dc-4c4d-47e8-8afc-c2e94bd6423c" x="-20" y="20" width="595" height="1" forecolor="#666666"/>
+			</line>
+			<staticText>
+				<reportElement uuid="ad430960-e147-4229-8568-dd7e1e5a1317" mode="Opaque" x="0" y="0" width="69" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[hojas_descripcion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="560173eb-7c40-49c1-a2d8-1c79c3958533" mode="Opaque" x="69" y="0" width="69" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[hojas_unidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1d6e01b8-a3a2-4a64-b3e6-3d7c0970163f" mode="Opaque" x="138" y="0" width="69" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[insumos_descripcion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9dd7dce7-ce25-4f8e-8200-7a290b6ae663" mode="Opaque" x="207" y="0" width="69" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[insumos_tipo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9740d447-7d12-4da2-a23c-a37860d5e2a9" mode="Opaque" x="276" y="0" width="69" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[insumos_unidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="030e141b-246b-40cb-94bb-df7a59b1dde1" mode="Opaque" x="345" y="0" width="69" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[insumos_precioUnitario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6c57a0a3-1c15-416e-b2f8-b5f9b464fc7d" mode="Opaque" x="414" y="0" width="69" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[insumosporhoja_codigo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="730d9534-8c18-4aff-a50b-462c73fb513c" mode="Opaque" x="483" y="0" width="69" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[insumosporhoja_cantidad]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement uuid="0f27ee62-718f-4bac-a484-8cc7e62952a7" positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="417d24aa-fdfe-4bc9-883b-2d69db318fbc" x="0" y="0" width="69" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hojas_descripcion}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="7b986fc5-fcb3-47e7-a385-cd8853b96920" x="69" y="0" width="69" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hojas_unidad}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="0a136441-512a-4d0f-8fe5-25c7f06fde7d" x="138" y="0" width="69" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{insumos_descripcion}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="576122f7-5b52-458e-a72e-cede4e0c9b1f" x="207" y="0" width="69" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{insumos_tipo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="b85acff4-b7e4-4d43-92f9-299b2c68c01e" x="276" y="0" width="69" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{insumos_unidad}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="86bbed22-f8cc-472d-b9f9-69744a8ca84b" x="345" y="0" width="69" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{insumos_precioUnitario}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="2055fd61-418e-4e80-bb8d-4330a65118bc" x="414" y="0" width="69" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{insumosporhoja_codigo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="1fdc0ae3-87c3-4866-9ae0-762f4eef7d32" x="483" y="0" width="69" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{insumosporhoja_cantidad}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement uuid="573b9733-6211-407f-8b7b-7713de7b6804" mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="f91906e4-49ec-44c1-8f6e-b73fac3e986c" mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="192d875c-f559-4c8d-8624-255169b4d86b" x="0" y="4" width="100" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
